@@ -13,6 +13,7 @@
 #include "../headers/easyfind.hpp"
 #include <algorithm>
 #include <cstddef>
+#include <exception>
 #include <iostream>
 #include <list>
 #include <vector>
@@ -37,6 +38,14 @@ int main()
 
 	for (size_t i = 0; i < v1.size(); i++) {
 		std::cout << v1[i] << std::endl;
+	}
+
+	try {
+		std::vector<int>::iterator res = easyfind(v1, 3);
+		std::cout << "Found an occurence : " << *res << std::endl;
+	}
+	catch (std::exception& e) {
+		std::cerr << e.what() << std::endl;
 	}
 	
 	return 0;
