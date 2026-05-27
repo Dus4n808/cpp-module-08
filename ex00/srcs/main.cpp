@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "../headers/easyfind.hpp"
-#include <algorithm>
 #include <cstddef>
 #include <exception>
 #include <iostream>
@@ -26,26 +25,30 @@ int main()
 	l1.push_back(42);
 	l1.push_front(52);
 
-	for (std::list<int>::iterator it = l1.begin(); it != l1.end(); ++it) {
-		std::cout << *it << std::endl;
-	}
-
+	
 	// ===== Vector =====
 	std::vector<int> v1;
 	v1.push_back(12);
 	v1.push_back(32);
+	v1.push_back(109);
 	
 
-	for (size_t i = 0; i < v1.size(); i++) {
-		std::cout << v1[i] << std::endl;
-	}
-
+	// ===== EasyFind Vector =====
 	try {
-		std::vector<int>::iterator res = easyfind(v1, 3);
+		std::vector<int>::iterator res = easyfind(v1, 12);
 		std::cout << "Found an occurence : " << *res << std::endl;
 	}
 	catch (std::exception& e) {
-		std::cerr << e.what() << std::endl;
+		std::cerr << "Error : " << e.what() << std::endl;
+	}
+
+	// ===== Easyfind List =====
+	try {
+		std::list<int>::iterator res = easyfind(l1, 32);
+		std::cout << "Found an occurence : " << *res << std::endl;
+	}
+	catch (std::exception& e) {
+		std::cerr << "Error : " << e.what() << std::endl;
 	}
 	
 	return 0;

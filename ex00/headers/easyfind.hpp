@@ -14,9 +14,8 @@
 #define EASYFIND_HPP
 
 #include <exception>
-#include <vector>
-#include <iostream>
 
+// ===== Exception =====
 class NotFoundOccurence : public std::exception {
 	public:
 		virtual const char * what() const throw() {
@@ -24,6 +23,7 @@ class NotFoundOccurence : public std::exception {
 		}
 };
 
+// ===== Main func =====
 template <typename T>
 typename T::iterator easyfind(T& container, int n) {
 	typename T::iterator it;
