@@ -13,6 +13,7 @@
 #ifndef SPAN_HPP
 #define SPAN_HPP
 
+#include <exception>
 #include <vector>
 
 class Span {
@@ -29,6 +30,25 @@ class Span {
 		~Span();
 
 		// ===== Member Func =====
+		void addNumber(int number);
+		int shortestSpan(void) const;
+		int longestSpan(void) const;
+		void printVector(void);
+		
+
+		// ===== Exception =====
+		class OutOfIndex : public std::exception {
+			virtual const char * what() const throw() {
+				return "Out of Index";
+			}
+		};
+
+		class NotEnoughElement : public std::exception {
+			virtual const char * what() const throw() {
+				return "Not Enough Element";
+			}
+		};
+
 		
 };
 
