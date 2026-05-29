@@ -22,29 +22,42 @@ void fillTab(Span& toFill, unsigned int num) {
 	}
 }
 
-int main() {
-	srand(time(NULL));
-	Span a(5);
-	Span b(10000000);
-	try {
-		a.addNumber(34);
-		a.addNumber(4654);
-		a.addNumber(43);
-		a.addNumber(4);
-		a.addNumber(24);
-	}
-	catch (std::exception& e) {
-		std::cerr << e.what() << std::endl;
-	}
-	try {
-		fillTab(b, 100);
-		std::cout << "Tab fill success" << std::endl;
-	}
-	catch (std::exception& e) {
-		std::cerr << e.what() << std::endl;
-	}
-	a.printVector();
-	std::cout << "Span : " << b.shortestSpan() << std::endl;
-	a.printVector();
-	std::cout << "Big Span : " << b.longestSpan() << std::endl;
+// int main() {
+// 	srand(time(NULL));
+// 	Span a(5);
+// 	Span b(10000000);
+// 	try {
+// 		a.addNumber(34);
+// 		a.addNumber(4654);
+// 		a.addNumber(43);
+// 		a.addNumber(4);
+// 		a.addNumber(24);
+// 	}
+// 	catch (std::exception& e) {
+// 		std::cerr << e.what() << std::endl;
+// 	}
+// 	try {
+// 		fillTab(b, 100);
+// 		std::cout << "Tab fill success" << std::endl;
+// 	}
+// 	catch (std::exception& e) {
+// 		std::cerr << e.what() << std::endl;
+// 	}
+// 	a.printVector();
+// 	std::cout << "Span : " << b.shortestSpan() << std::endl;
+// 	a.printVector();
+// 	std::cout << "Big Span : " << b.longestSpan() << std::endl;
+// }
+
+int main()
+{
+	Span sp = Span(5);
+	sp.addNumber(6);
+	sp.addNumber(3);
+	sp.addNumber(17);
+	sp.addNumber(9);
+	sp.addNumber(11);
+	std::cout << sp.shortestSpan() << std::endl;
+	std::cout << sp.longestSpan() << std::endl;
+	return 0;
 }
